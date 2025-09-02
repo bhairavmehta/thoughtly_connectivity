@@ -1,0 +1,13 @@
+
+services:
+  fastapi-app:
+    build: .
+    ports:
+      - "8080:8080"
+    env_file:
+          - .env
+    volumes:
+      - ./backend/src:/app/backend/src
+    environment:
+      - PORT=8080
+    container_name: fastapi_app_container
